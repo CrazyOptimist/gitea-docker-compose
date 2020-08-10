@@ -33,6 +33,10 @@ services:
     container_name: mysql_eight
     ports:
       - "3306:3306"
+    networks:
+      - gitea
+    cap_add:
+      - SYS_NICE
     command:
       [
         "--default_authentication_plugin=mysql_native_password",
